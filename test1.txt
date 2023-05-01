@@ -1,0 +1,1 @@
+Halo, saya hendri dan ini adalah contoh kompresi dengan algoritma huffman

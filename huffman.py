@@ -80,9 +80,8 @@ def Huffman_Encoding(data):
     while len(nodes) > 1:
         nodes = sorted(nodes, key=lambda x: x.prob)
         # Cabang pohon
-        # Kiri = 1, kanan = 0 
-        left = nodes[1]
-        right = nodes[0]
+        left = nodes[0]
+        right = nodes[1]
     
         left.code = 0
         right.code = 1
@@ -99,7 +98,7 @@ def Huffman_Encoding(data):
     print("symbols with codes", huffman_encoding)
     Total_Gain(data, huffman_encoding)
     encoded_output = Output_Encoded(data,huffman_encoding)
-    output = open('EncodeBinaryFiles/test4.txt', 'w')
+    output = open('EncodeBinaryFiles/test1.txt', 'w')
     output.write(encoded_output)
     return encoded_output, nodes[0], encode_runtime 
     
@@ -127,11 +126,11 @@ def Huffman_Decoding(encoded_data, huffman_tree):
     decode_runtime = stop - start
     return string, decode_runtime        
 
-teks = open("test4.txt")
-outputBinary = open("BinaryFiles/test4.txt", 'w')
-data = teks.read()
+teks = open("File Uji Coba/test1.txt")
+outputBinary = open("BinaryFiles/test1.txt", 'w')
+data = "MULTIMEDIA"
 
-# Convert file asli kedalam biner
+# Convert kebiner
 data_bin = " ".join(format(ord(x), 'b') for x in data)
 outputBinary.write(data_bin)
 
